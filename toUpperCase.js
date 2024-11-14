@@ -1,4 +1,4 @@
-function jadenSmith(){
+function myFunction(){
     const str="Hi there.. my name is prisca, i'm a trainee at the gym, Rwanda's most intense software development trainee program.";
     let splitedStr=str.split(" ");
     for(let i=0; i<splitedStr.length; i++){
@@ -6,4 +6,4 @@ function jadenSmith(){
     };
     console.log(splitedStr.join(" "));
 };
-jadenSmith();
+myFunction();
