@@ -69,7 +69,115 @@ Asynchronnous and event-based programming
         console.error('Error:', err.message);
     }
     }
-    
+
     🧠 Tip:
-    Don't overcomplicate it. If you can avoid async logic for a task, avoid it. But when necessary, plan carefully, break down steps, and isolate complexity.
+    Don't overcomplicate it. If you can avoid async logic for a task, avoid it. But when necessary, 
+    plan carefully, break down steps, and isolate complexity.
+
+- All the major async contracts in JavaScript, along with their syntax and how they are used:
+
+        🔹 1. Callback Functions (Old style)
+        👉 Syntax:
+
+        function doSomething(callback) {
+        // some operation
+        callback(result);
+        }
+        doSomething(function(result) {
+        console.log("Result:", result);
+        });
+
+        ⚠️ Problems:
+         - Callback hell
+         - Difficult to manage errors
+         - Not chainable
+
+        🔹 2. Promises (Modern standard)
+        👉 Syntax:
+        
+        const promise = new Promise((resolve, reject) => {
+        if (/* success */) {
+            resolve("Success value");
+        } else {
+            reject("Error message");
+        }
+        });
+
+        promise
+        .then(data => console.log(data))
+        .catch(error => console.error(error))
+        .finally(() => console.log("Done"));
+
+
+        ✅ Advantages:
+           - Chainable
+           - Handles errors better than callbacks
+
+        🔹 3. Async/Await (Built on Promises)
+        👉 Syntax:
+        
+        async function fetchData() {
+        try {
+            const response = await fetch("https://example.com/data");
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error("Error:", error);
+        }
+        }
+        fetchData();
+
+        ✅ Advantages:
+           - Cleaner, synchronous-like code
+           - Still uses Promises underneath
+
+        🔹 4. Promise.all()
+        Waits for all promises to resolve or rejects if any one fails.
+
+        👉 Syntax:
+        
+        Promise.all([promise1, promise2])
+        .then(values => console.log(values))
+        .catch(error => console.error(error));
+
+        🔹 5. Promise.race()
+        Returns the first promise that settles (either resolves or rejects).
+
+        👉 Syntax:
+        
+        Promise.race([promise1, promise2])
+        .then(result => console.log("First finished:", result))
+        .catch(error => console.error(error));
+
+        🔹 6. Promise.allSettled()
+        Waits for all promises, returns array of results (resolved or rejected).
+
+        👉 Syntax:
+       
+        Promise.allSettled([promise1, promise2])
+        .then(results => {
+            results.forEach(result => {
+            if (result.status === "fulfilled") {
+                console.log("Success:", result.value);
+            } else {
+                console.log("Failed:", result.reason);
+            }
+            });
+        });
+
+        🔹 7. Promise.any()
+        Returns the first fulfilled promise. Ignores rejections unless all fail.
+
+        👉 Syntax:
+        
+        Promise.any([promise1, promise2])
+        .then(result => console.log("First success:", result))
+        .catch(error => console.error("All failed:", error));
+        
+        ✅ Summary Table
+        Feature	Returns	Waits For	Rejects If	Best Use Case
+        Promise.all	Array	All	Any fails	All must succeed
+        Promise.race	First	First	First fails	Fastest result (success or failure)
+        Promise.allSettled	Array	All	Never	Need all outcomes, even if some fail
+        Promise.any	First	First pass	All fail	Want just one successful result
 
