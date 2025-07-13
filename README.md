@@ -2,6 +2,8 @@
 
 This repository documents my journey in learning JavaScript — from the basics to more advanced topics. It includes hands-on exercises, notes, and small projects that demonstrate my progress and understanding of core JavaScript concepts.
 
+This repository contains also my solutions to various coding challenges (katas) from [codewars]. Each solution is implemented in JavaScript with clean and efficient code.
+
 ## Folder Structure
 
 - `Fundamentals/` – Core concepts: variables, functions, loops, arrays, objects, etc.
@@ -22,8 +24,8 @@ This repository documents my journey in learning JavaScript — from the basics 
 
 ## Tools Used
 
-- **Editor:** Visual Studio Code  
-- **Version Control:** Git & GitHub  
+- **Editor:** Visual Studio Code
+- **Version Control:** Git & GitHub
 - **Browser:** Google Chrome (DevTools)
 
 ## Learning Objectives
