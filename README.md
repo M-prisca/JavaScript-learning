@@ -39,11 +39,11 @@ This repository contains also my solutions to various coding challenges (katas) 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/javascript-learning-journey.git
+   git clone https://github.com/M-prisca/javascript-learning.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd javascript-learning-journey
+   cd javascript-learning
    ```
 3. Open the project in your preferred code editor.
 4. Start exploring the different folders and their contents.
