@@ -9,6 +9,8 @@
 
 function switchItUp(number) {
   switch (number) {
+    case 0:
+      return "Zero";
     case 1:
       return "One";
     case 2:
@@ -16,19 +18,18 @@ function switchItUp(number) {
     case 3:
       return "Three";
     case 4:
-      return "four";
+      return "Four";
     case 5:
       return "Five";
     case 6:
       return "Six";
     case 7:
-      return "seven";
+      return "Seven";
     case 8:
       return "Eight";
     case 9:
       return "Nine";
     default:
-      return "Invalid number";
+      return "invalid number";
   }
 }
-console.log(switchItUp(1));
